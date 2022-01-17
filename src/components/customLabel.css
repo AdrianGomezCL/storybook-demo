@@ -13,3 +13,16 @@
 .h3 {
     font-size: 16px;
 }
+
+.text-primary {
+    color: #111;
+}
+
+.text-secondary {
+    color: #777;
+    font-style: italic;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
