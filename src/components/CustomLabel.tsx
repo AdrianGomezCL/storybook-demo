@@ -7,14 +7,19 @@ export interface Props {
     allCaps?: boolean;
 
     /**
-     * Color personalizado de la fuente
+     * Color personalizado del fondo
      */
-    fontColor?: string;
+     backgroundColor?: string;
 
     /**
      *   Tipo de etiqueta
      */
     color?: "primary" | "secondary";
+
+    /**
+     * Color personalizado de la fuente
+     */
+     fontColor?: string;
 
     /**
      * Texto de la etiqueta
@@ -30,6 +35,7 @@ export interface Props {
 export const CustomLabel = ({
     allCaps = false,
     color = "primary",
+    backgroundColor,
     fontColor,
     label = "No label",
     size = "normal",
@@ -39,7 +45,7 @@ export const CustomLabel = ({
             className={`customLabel ${size} text-${color} ${
                 allCaps && "text-uppercase"
             }`}
-            style={{ color: fontColor }}
+            style={{ color: fontColor, backgroundColor }}
         >
             {label}
         </span>
