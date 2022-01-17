@@ -1,32 +1,47 @@
 import "./customLabel.css";
 
 export interface Props {
-  /**
-   * Texto de la etiqueta
-   */
-  label: string;
+    /**
+     *   Texto capitalizado
+     */
+    allCaps?: boolean;
 
-  /**
-   *   Tamaño de la etiqueta
-   */
-  size: "normal" | "h1" | "h2" | "h3";
-  
-  /**
-   *   Tipo de etiqueta
-   */
-  color: "primary" | "secondary";
+    /**
+     * Color personalizado de la fuente
+     */
+    fontColor?: string;
 
-  /**
-   *   Texto capitalizado
-   */
-  allCaps: boolean;
+    /**
+     *   Tipo de etiqueta
+     */
+    color?: "primary" | "secondary";
+
+    /**
+     * Texto de la etiqueta
+     */
+    label: string;
+
+    /**
+     *   Tamaño de la etiqueta
+     */
+    size: "normal" | "h1" | "h2" | "h3";
 }
 
 export const CustomLabel = ({
-  label = "No label",
-  size = "normal",
-  color = "primary",
-  allCaps = false,
+    allCaps = false,
+    color = "primary",
+    fontColor,
+    label = "No label",
+    size = "normal",
 }: Props) => {
-  return <span className={`customLabel ${size} text-${color} ${ allCaps && "text-uppercase" }`}>{label}</span>;
+    return (
+        <span
+            className={`customLabel ${size} text-${color} ${
+                allCaps && "text-uppercase"
+            }`}
+            style={{ color: fontColor }}
+        >
+            {label}
+        </span>
+    );
 };

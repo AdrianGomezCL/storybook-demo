@@ -9,6 +9,9 @@ export default {
         color: {
             control: "select",
         },
+        customColor: {
+            control: "color",
+        },
     },
 } as ComponentMeta<typeof CustomLabel>;
 
@@ -35,4 +38,10 @@ export const AllCaps = Template.bind({});
 AllCaps.args = {
     label: "All caps",
     allCaps: true,
+};
+
+export const CustomColor = Template.bind({});
+CustomColor.args = {
+    label: "Custom color",
+    fontColor: "#ff0000",
 };
